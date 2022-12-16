@@ -2,6 +2,7 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import CharactersList from './components/CharactersList.vue';
+// import CmdSelector from './components/CmdSelector.vue';
 
 import { store } from './store.js';
 
@@ -10,6 +11,7 @@ export default{
   components: {
     AppHeader,
     CharactersList,
+    // CmdSelector,
   },
   data(){
     return{
@@ -29,8 +31,26 @@ export default{
       }
       );
 
-    }
+    },
+
+    // callApi(){
+    // let newUrl = store.apiURL;
+
+    // if ((store.selected == "Starter") || (store.selected == "")){
+    //   newUrl
+    // }
+    // else {
+    //   newUrl += `?status=${store.selected}`
+    // }
+    // axios
+    // .get(newUrl)
+    // .then(res =>{
+    //   store.risultato = res.data.results
+    // })
+    // },
+
   },
+  
   mounted(){
     this.getCharacters();
   }
@@ -39,6 +59,7 @@ export default{
 
 <template>
   <AppHeader :msg="store.titolo" />
+  
   <main>
     <CharactersList />
   </main>
