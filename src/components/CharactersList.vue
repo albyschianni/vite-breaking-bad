@@ -28,10 +28,13 @@ export default{
     }
     axios
     .get(newUrl)
-    .then(res =>{
-      store.risultato = res.data.results
+    .then(res => {
+      store.characterList = res.data.results
     })
     },
+    },
+    mounted(){
+        this.callApi()
     }
 }
 </script>
